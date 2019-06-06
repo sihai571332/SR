@@ -1,7 +1,10 @@
 ### playing with docker ###
 
 # pull an image (e.g. ubuntu, in this file)
+# the 'onbuild' version image automates updating packages
 docker pull ubuntu
+
+docker pull python:3-onbuild
 
 # see the docker images in local system
 docker images
