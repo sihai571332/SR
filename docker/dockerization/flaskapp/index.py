@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello():
-    path = "./shared_folder"
+    path = "../sf"
     lists = os.listdir(path)
     return str(lists)
 
