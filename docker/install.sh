@@ -22,13 +22,13 @@ sudo systemctl status docker
 # add user to the docker group
 sudo usermod -aG docker ${USER}
 
-su - ${USER}
+#su - ${USER}
 
 # confirm the user is in the group
-id -nG
+#id -nG
 
 ### test docker installation ###
-docker run hello-world
+#docker run hello-world
 
 
 
