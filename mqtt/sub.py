@@ -1,6 +1,6 @@
 import paho.mqtt.client as mqtt
 
-broker_url = "localhost"
+broker_url = "192.168.72.133"
 broker_port = 1883
 
 def on_connect(client, userdata, flags, rc):
