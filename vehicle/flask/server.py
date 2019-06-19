@@ -10,7 +10,7 @@ app.config['UPLOAD_FOLDER'] =  UPLOAD_FOLDER
 
 @app.route('/expose')
 def expose():
-    path = "../sf/"
+    path = UPLOAD_FOLDER 
     fileList = os.listdir(path)
     if len(fileList) > 0:
         fname = fileList[0]
