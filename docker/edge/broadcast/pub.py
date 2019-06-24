@@ -6,7 +6,8 @@ import time
 
 OUTPUT_FOLDER = '../result/'
 
-broker_url = '192.168.72.133'
+broker_url = '192.168.137.250'
+#broker_url = '192.168.72.133'
 broker_port = 1883
 
 client = mqtt.Client()
