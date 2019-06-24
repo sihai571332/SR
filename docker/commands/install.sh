@@ -1,4 +1,4 @@
-### install the docker on Linuxi ###
+### install the docker on Linux ###
 
 # update the packages
 sudo apt-get update
