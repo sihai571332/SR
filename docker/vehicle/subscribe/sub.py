@@ -1,6 +1,7 @@
 import paho.mqtt.client as mqtt
 
-broker_url = "192.168.72.133"
+broker_url = "192.168.137.250"
+#broker_url = "192.168.72.133"
 broker_port = 1883
 
 OUTPUT_FOLDER = '../output/'

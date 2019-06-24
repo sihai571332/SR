@@ -12,5 +12,5 @@ fi
 mkdir feedback
 cd feedback
 
-#docker run --rm --name vf -v `pwd`:/output -d vehicle/feedback
-docker run --rm --name vf -v `pwd`:/output vehicle/feedback
+docker run --rm --name vf -v `pwd`:/output -d vehicle/feedback
+#docker run --rm --name vf -v `pwd`:/output vehicle/feedback
