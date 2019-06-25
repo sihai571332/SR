@@ -28,8 +28,8 @@ client.on_connect = on_connect
 client.connect(broker_url, broker_port)
 
 #client.subscribe('result', qos=1)
-client.subscribe('filename', qos=1)
-client.subscribe('result', qos=1)
+client.subscribe('filename', qos=0)
+client.subscribe('result', qos=0)
 
 client.message_callback_add('filename', on_message_filename)
 client.message_callback_add('result', on_message_result)
