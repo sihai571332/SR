@@ -1,7 +1,6 @@
 # broadcasting the result
 import paho.mqtt.client as mqtt
 import os
-import requests
 import time
 
 OUTPUT_FOLDER = '../result/'
