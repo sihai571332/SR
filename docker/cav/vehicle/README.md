@@ -1,10 +1,5 @@
-# Before Running the 'run.sh' Script
-1. first run the 'build.sh' file if you haven't or if you made changes to any
-files in those two folders(i.e., expose, subscribe)
-
-$ bash build.sh
-
-2. A change needs to be made to the file subscribe/sub.py and that is
+# Usage
+1. A change needs to be made to the file subscribe/sub.py and that is
 changing the brocker_url in that file.
 
 e.g., In the file subscribe/sub.py
@@ -14,17 +9,16 @@ e.g., In the file subscribe/sub.py
 where 192.168.44.22 is the brocker url you are going to use. Please make
 sure the brocker urls are the same in both vehicle and edge computers.
 
-# Usage
-1. if you made any change, run the 'build.sh' script first, otherwise skip to
-step 2.
+2. if you made any change, run the 'build.sh' script first, otherwise skip to
+step 3.
 
 $ bash build.sh
 
-2. run the 'run.sh' script.
+3. run the 'run.sh' script.
 
 $ bash run.sh
 
-3. And put some images in the new-created folder 'shared_folder'. 
+4. And put some images in the new-created folder 'shared_folder'. 
 
 Hints: You'd better put images that can be stitched into one. Because so far
 this framework only handles that situation well and gives you the workflow of
