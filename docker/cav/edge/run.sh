@@ -3,40 +3,8 @@
 # delete all stopped containers
 docker rm $(docker ps -a -q)
 
-# 1) create directories
-if [ -d 'rawdata' ]
-then
-	rm rawdata -rf
-fi
-mkdir rawdata
-
-if [ -d 'fusioned' ]
-then
-	rm fusioned -rf
-fi
-mkdir fusioned
-
-if [ -d 'result' ]
-then
-	rm result -rf
-fi
-mkdir result
-
-# 2) build images
-cd grab
-docker build -t edge/grab .
-
-cd ../fusion
-docker build -t edge/fusion .
-
-cd ../detection
-docker build -t edge/detection .
-
-cd ../broadcast
-docker build -t edge/broadcast .
-
 # 3) store paths which are to be mounted with containers
-cd ../rawdata
+cd rawdata
 grab_path=`pwd`
 
 cd ../fusioned
