@@ -1,7 +1,26 @@
 #! /bin/bash
 
-# delete all stopped containers
+# 1) delete all stopped containers
 docker rm $(docker ps -a -q)
+
+# 2) create directories
+if [ -d 'rawdata' ]
+then
+	rm rawdata -rf
+fi
+mkdir rawdata
+
+if [ -d 'fusioned' ]
+then
+	rm fusioned -rf
+fi
+mkdir fusioned
+
+if [ -d 'result' ]
+then
+	rm result -rf
+fi
+mkdir result
 
 # 3) store paths which are to be mounted with containers
 cd rawdata

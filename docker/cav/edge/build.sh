@@ -1,25 +1,6 @@
 #! /bin/bash
 
-# 1) create directories
-if [ -d 'rawdata' ]
-then
-	rm rawdata -rf
-fi
-mkdir rawdata
-
-if [ -d 'fusioned' ]
-then
-	rm fusioned -rf
-fi
-mkdir fusioned
-
-if [ -d 'result' ]
-then
-	rm result -rf
-fi
-mkdir result
-
-# 2) build images
+# 1) build images
 cd grab
 docker build -t edge/grab .
 
