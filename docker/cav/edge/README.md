@@ -1,16 +1,12 @@
-# Before Running the 'buildrun.sh' Script
-1. Two files are too big to put in the repository, so you cannot run
-the 'buildrun.sh' script correctly without those two files.
-
-2. Those two files are 'yolov3.weight' and 'yolo.h5'.
-
-You need to download the 'yolov3.weight' first and do something to covert it to 'yolo.h5'.
-See the README file in 'detection' folder for details.
-
 # Usage
-Before run the 'buildrun.sh' script, please make a few changes to the following files.
+Before run the 'run.sh' script, please make a few changes to the following files.
 
-1. change the broker url in broadcast/pub.py to the actual broker IP address you are
+1. run the 'build.sh' file first if you haven't or if you made changes to any files
+in those four folders(i.e., grab, fusion, detection, broadcast)
+
+$ bash build.sh
+
+2. change the broker url in broadcast/pub.py to the actual broker IP address you are
 going to use.
 
 e.g., In the file broadcast/pub.py
@@ -19,7 +15,7 @@ e.g., In the file broadcast/pub.py
 
 where 192.168.111.111 is the broker IP address
 
-2. change the vehicle IP address in grab/grab.sh to the actual vehicle computer IP
+3. change the vehicle IP address in grab/grab.sh to the actual vehicle computer IP
 address you are going to use.
 
 e.g., In the file grab/grab.sh 
@@ -28,6 +24,6 @@ e.g., In the file grab/grab.sh
 
 where 192.168.33.22 is your vehicle IP address
 
-3. After the changes, start the vehicle service first and run the 'buildrun.sh' script
+4. After the changes, start the vehicle service first and run the 'run.sh' script
 
-$ bash buildrun.sh
+$ bash run.sh
