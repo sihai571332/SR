@@ -3,7 +3,7 @@ FROM alpine
 COPY . /app
 WORKDIR /app 
 
-RUN apk update && apk --no-cache add bash
+RUN apk update 
 RUN apk --no-cache add wget
 
-CMD bash ./grab.sh
+CMD ["sh", "grab.sh"]
