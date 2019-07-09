@@ -28,3 +28,15 @@ Also, this could cause another issue, the message number that a broker can publi
 going to be limited to 10.
 
 5). make sure the connection among vehicles and edges are strong and stable.
+
+# Docker Images Size Before and After Shrinking
+
+DockerImage		BEFORE		AFTER		SIZE_REDUCED
+
+edge/grab		11.7MB		7.47MB		36%
+
+edge/fusion		1.13GB		679MB		41%
+
+edge/detection	2.76GB		1.64GB		40%
+
+edge/broadcast	87.7MB		60.6MB		31%
