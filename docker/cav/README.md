@@ -35,9 +35,9 @@ DockerImage			BEFORE		AFTER		SIZE_REDUCED
 
 edge/grab			11.7MB		7.47MB		36%
 
-edge/fusion			1.13GB		679MB		41%
+edge/fusion			1.13GB		671MB		42%
 
-edge/detection		2.76GB		1.64GB		40%
+edge/detection		2.76GB		1.63GB		40%
 
 edge/broadcast		87.7MB		60.6MB		31%
 
