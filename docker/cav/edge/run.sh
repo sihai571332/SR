@@ -38,15 +38,15 @@ cd ..
 # 4) run these containers
 #
 # run grab container
-docker run -v $grab_path:/rawdata edge/grab
+docker run --network host -v $grab_path:/rawdata edge/grab
 
 # run fusion container
 docker run -v $fusion_img_path:/images -v $fusion_output_path:/output edge/fusion
 
 # run detection container
 docker run --name ed -v $fusion_output_path:/image -it edge/detection
-docker cp ed:/src/out.jpg result/
+docker cp ed:/app/out.jpg result/
 
 # run broadcast container
-docker run -v $broadcast_path:/result edge/broadcast
+docker run --network host -v $broadcast_path:/result edge/broadcast
 
