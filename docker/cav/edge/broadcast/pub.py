@@ -4,11 +4,12 @@ import os
 import time
 
 OUTPUT_FOLDER = '../result/'
+BROKER_URL_FILE = '../bip/ip.txt'
 
-broker_url = '192.168.137.238'
-#broker_url = '192.168.137.2'
-#broker_url = '192.168.72.131'
-#broker_url = '192.168.72.133'
+broker_url = ''
+with open(BROKER_URL_FILE, 'r') as f:
+    broker_url = f.readline().rstrip()
+
 broker_port = 1883
 
 client = mqtt.Client()
@@ -24,8 +25,8 @@ while len(fileList):
         filepayload = f.read()
         filebyte = bytearray(filepayload)
 
-        client.publish('filename', fname, 1, False)
-        client.publish('result', filebyte, 1, False)
+        client.publish('filename', fname, 1)
+        client.publish('result', filebyte, 1)
 
     os.remove(OUTPUT_FOLDER + fname)
     fileList = os.listdir(OUTPUT_FOLDER)

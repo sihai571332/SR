@@ -2,19 +2,21 @@ import sys
 import argparse
 from yolo import YOLO, detect_video
 from PIL import Image
+import os
+
+IMG_INPUT = '/image/'
 
 def detect_img(yolo):
-    while True:
-        img = input('Input image filename:')
-        try:
-            image = Image.open(img)
-        except:
-            print('Open Error! Try again!')
-            continue
-        else:
-            r_image = yolo.detect_image(image)
-            r_image.show()
-            r_image.save("out.jpg","JPEG")
+    imgs = os.listdir(IMG_INPUT)
+    img = os.path.join(IMG_INPUT, imgs[0])
+    try:
+        image = Image.open(img)
+    except:
+        print('Open Error! Try again!')
+    else:
+        r_image = yolo.detect_image(image)
+        r_image.show()
+        r_image.save("out.jpg","JPEG")
     yolo.close_session()
 
 FLAGS = None
@@ -68,7 +70,7 @@ if __name__ == '__main__':
         """
         Image detection mode, disregard any remaining command line arguments
         """
-        print("Image detection mode")
+        #print("Image detection mode")
         if "input" in FLAGS:
             print(" Ignoring remaining command line arguments: " + FLAGS.input + "," + FLAGS.output)
         detect_img(YOLO(**vars(FLAGS)))

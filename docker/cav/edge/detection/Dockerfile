@@ -11,3 +11,5 @@ WORKDIR /app
 RUN pip3 install -r requirements.txt
 RUN wget https://pjreddie.com/media/files/yolov3.weights
 RUN python3 convert.py yolov3.cfg yolov3.weights model_data/yolo.h5
+
+CMD python3 yolo_video.py --image

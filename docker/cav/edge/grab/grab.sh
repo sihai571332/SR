@@ -3,10 +3,15 @@
 cd ../rawdata
 
 # vehicle IP address
-#wget -r -nd http://192.168.137.163:9000
-wget -r -nd http://192.168.137.249:9000
-#wget -r -nd http://192.168.157.128:9000
-#wget -r -nd http://192.168.72.132:9000
+V_IP_File='../vip/ip.txt'
+vehicle_IP=''
+
+while read -r line
+do
+	vehicle_IP="$line"
+done < "$V_IP_File"
+
+wget -r -nd "http://$vehicle_IP:9000"
 
 if [ -e 'index.html' ]
 then

@@ -1,5 +1,18 @@
 #! /bin/bash
 
+# 0) check if vehicle and broker IP files exist
+if [ ! -e 'bip/ip.txt' ]
+then
+	echo 'bip/ip.txt missing'
+	exit 1
+fi
+
+if [ ! -e 'vip/ip.txt' ]
+then
+	echo 'vip/ip.txt missing'
+	exit 1
+fi
+
 # 1) delete all stopped containers
 docker rm $(docker ps -a -q)
 
@@ -33,20 +46,27 @@ fusion_output_path=`pwd`
 cd ../result
 broadcast_path=`pwd`
 
+cd ../bip
+brokerip_path=`pwd`
+
+cd ../vip
+vehicleip_path=`pwd`
+
 cd ..
 
 # 4) run these containers
 #
 # run grab container
-docker run --network host -v $grab_path:/rawdata edge/grab
+docker run --network host -v $grab_path:/rawdata -v $vehicleip_path:/vip edge/grab
 
 # run fusion container
 docker run -v $fusion_img_path:/images -v $fusion_output_path:/output edge/fusion
 
 # run detection container
-docker run --name ed -v $fusion_output_path:/image -it edge/detection
+docker run --name ed -v $fusion_output_path:/image edge/detection
 docker cp ed:/app/out.jpg result/
+#cp result/out.jpg .
 
 # run broadcast container
-docker run --network host -v $broadcast_path:/result edge/broadcast
+docker run --network host -v $broadcast_path:/result -v $brokerip_path:/bip edge/broadcast
 

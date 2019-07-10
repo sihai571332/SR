@@ -13,7 +13,7 @@ ap.add_argument("-o", "--output", type=str, required=True,
 	help="path to the output image")
 args = vars(ap.parse_args())
 # grab the paths to the input images and initialize our images list
-print("[INFO] loading images...")
+#print("[INFO] loading images...")
 imagePaths = sorted(list(paths.list_images(args["images"])))
 images = []
 
@@ -25,7 +25,7 @@ for imagePath in imagePaths:
 
 	# initialize OpenCV's image stitcher object and then perform the image
 # stitching
-print("[INFO] stitching images...")
+#print("[INFO] stitching images...")
 stitcher = cv2.createStitcher() if imutils.is_cv3() else cv2.Stitcher_create()
 (status, stitched) = stitcher.stitch(images)
 
