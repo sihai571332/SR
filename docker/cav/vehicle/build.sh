@@ -1,8 +1,10 @@
 #! /bin/bash
 
 cd expose
-docker build -t vehicle/expose .
+docker build -t thatape/ecf_vehicle:expose .
+docker build -t st571332/ecf_vehicle:expose .
 
 cd ../subscribe
-docker build -t vehicle/feedback .
+docker build -t thatape/ecf_vehicle:feedback .
+docker build -t st571332/ecf_vehicle:feedback .
 
