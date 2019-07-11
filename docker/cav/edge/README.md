@@ -8,3 +8,6 @@ to the vehicle IP you are going to use.
 3. Run the 'run.sh' script
 
 $ bash run.sh
+
+# Notice
+1. if you are suffering an error like 'exec formt error', it's becausethe docker images are built on a specific architecture, if your machine doesn't match the same architecture, it is not going to run as expected. In that case, you may need to go back to the 'debug/edge' folder to use the build.sh to rebuild all images on your machine and run again.
