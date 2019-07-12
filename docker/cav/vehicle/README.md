@@ -15,4 +15,6 @@ but no result is gonna reflected in the 'feedback' folder as the edge failed to
 produce desirable output.
 
 # Notice
+0. this specific version of framework is not what the AV(autonomous vehicle) industry wants cause the edge processing speed is not satisfying.But it gives the idea behind the flow work of edge computing framework.
+
 1. if you are suffering an error like 'exec formt error', it's becausethe docker images are built on a specific architecture, if your machine doesn't match the same architecture, it is not going to run as expected. In that case, you may need to go back to the 'debug/vehicle' folder to use the build.sh to rebuild all images on your machine and run again.
