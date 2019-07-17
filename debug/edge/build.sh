@@ -1,19 +1,11 @@
 #! /bin/bash
 
-# 1) build images
-cd grab
-docker build -t thatape/ecf_edge:grab .
-docker build -t st571332/ecf_edge:grab .
+# build images
 
-cd ../fusion
-docker build -t thatape/ecf_edge:fusion .
-docker build -t st571332/ecf_edge:fusion .
+bash build_grab.sh
 
-cd ../detection
-docker build -t thatape/ecf_edge:detection .
-docker build -t st571332/ecf_edge:detection .
+bash build_fusion.sh
 
-cd ../broadcast
-docker build -t thatape/ecf_edge:broadcast .
-docker build -t st571332/ecf_edge:broadcast .
+bash build_detection.sh
 
+bash build_broadcast.sh
