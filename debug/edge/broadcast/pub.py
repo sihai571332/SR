@@ -24,9 +24,9 @@ while len(fileList):
     with open(OUTPUT_FOLDER + fname, 'rb') as f:
         filepayload = f.read()
         filebyte = bytearray(filepayload)
-
-        client.publish('filename', fname, 1)
-        client.publish('result', filebyte, 1)
+        for _ in range(5):
+            client.publish('filename', fname, 1)
+            client.publish('result', filebyte, 1)
 
     os.remove(OUTPUT_FOLDER + fname)
     fileList = os.listdir(OUTPUT_FOLDER)
