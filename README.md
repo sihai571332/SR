@@ -1,4 +1,4 @@
-# Autonomous Vehicle SR(Summer Research)
+# CAV (Connected Autonomous Vehicle) SR(Summer Research)
 DATE: 2019.5 - 2019.8
 
 PROJECT: Edge Computing
