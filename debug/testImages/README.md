@@ -5,6 +5,8 @@ stitched one are showing in table below.
 
 # Test Result
 
+|          |          |                  Time                       |
+|          |          |--------------------------|------------------|
 |Group     |  size    |   fusion/stitching (s)   |     detection (s)|
 |----------|----------|--------------------------|------------------|
 |Above     | 49M      |      14.201              |       20.650     |
