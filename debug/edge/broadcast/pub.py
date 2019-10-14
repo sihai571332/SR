@@ -14,6 +14,7 @@ broker_port = 1883
 
 client = mqtt.Client()
 client.connect(broker_url, broker_port)
+client.loop_start()
 
 # part 2). broadcast the data
 fileList = os.listdir(OUTPUT_FOLDER)
@@ -30,3 +31,5 @@ while len(fileList):
 
     os.remove(OUTPUT_FOLDER + fname)
     fileList = os.listdir(OUTPUT_FOLDER)
+
+client.loop_stop()
