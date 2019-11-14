@@ -4,11 +4,11 @@ import base64
 import os
 import time
 
-# Constant variables
-SOURCE_FOLDER = '../result/'
-
 # class for publishing
 class Publisher(object):
+
+    # Constant variables
+    SOURCE_FOLDER = '../result/'
 
     def __init__(self, broker):
         self._client = mqtt.Client()
@@ -18,7 +18,7 @@ class Publisher(object):
     def pub(self, topics):
         self._client.loop_start()
 
-        fileList = os.listdir(SOURCE_FOLDER)
+        fileList = os.listdir(Publisher.SOURCE_FOLDER)
         i = 0
 
         while i < len(fileList):
@@ -27,7 +27,7 @@ class Publisher(object):
 
             data['filename'] = fname
 
-            with open(os.path.join(SOURCE_FOLDER, fname), 'rb') as f:
+            with open(os.path.join(Publisher.SOURCE_FOLDER, fname), 'rb') as f:
                 filepayload = f.read()
                 data['img'] = base64.b64encode(filepayload).decode()
                 for j in range(0, len(topics)):
@@ -40,7 +40,7 @@ class Publisher(object):
     def pub2(self, topics):
         self._client.loop_start()
 
-        fileList = os.listdir(SOURCE_FOLDER)
+        fileList = os.listdir(Publisher.SOURCE_FOLDER)
         i = 0
 
         while i < len(fileList):
@@ -49,7 +49,7 @@ class Publisher(object):
 
             data['filename'] = fname
 
-            with open(os.path.join(SOURCE_FOLDER, fname), 'rb') as f:
+            with open(os.path.join(Publisher.SOURCE_FOLDER, fname), 'rb') as f:
                 filepayload = f.read()
                 data['img'] = base64.b64encode(filepayload).decode()
                 self._client.publish(topics, json.dumps(data), self._qos)
