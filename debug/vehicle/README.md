@@ -1,16 +1,13 @@
 # Usage
-1. A change needs to be made to the file subscribe/sub.py and that is
-changing the brocker_url in that file.
+1. Put the broker IP address and port inside the file bip/ip.txt.
 
-e.g., In the file subscribe/sub.py
+e.g., 192.168.22.22:1111
 
-	brocker_url = '192.168.44.22'
-
-where 192.168.44.22 is the brocker url you are going to use. Please make
+where 192.168.22.22 is the brocker url and 1111 is the port. Please make
 sure the brocker urls are the same in both vehicle and edge computers.
 
-2. if you made any change, run the 'build.sh' script first, otherwise skip to
-step 3.
+2. if you made any change to python programs except the main.py, run the 'build.sh' 
+script first, otherwise skip to step 3.
 
 $ bash build.sh
 
